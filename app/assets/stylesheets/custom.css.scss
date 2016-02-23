@@ -1,6 +1,23 @@
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-p {
+body{
+  padding-top:100px;
+}
 
+table .description{
+  word-wrap:break-word;
+}
+
+.navbar-brand{
+  font-family:papyrus;
+  color:red !important;
+  font-weight:bold;
+  font-size:23px;
+  margin-right:30px;
+}
+
+.error-messages li{
+  list-style:none;
 }
