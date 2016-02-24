@@ -1,6 +1,12 @@
-<h1>Edit Article <%= @article.id %></h1>
+<section
+<%= render 'layouts/containerset' %>
+  <div class = "col-md-4 col-md-offset-3">
+      <h1>Edit Article <%= @article.id %></h1>
+    </div>
+  </div>
+</div>
 
-    <%= render 'form' %>
-  
-  <%= link_to 'Back to All Articles', articles_path %>
+    
+<%= render 'form' %>
 
+</section>

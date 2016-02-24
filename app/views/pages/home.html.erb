@@ -1,13 +1,20 @@
 <section>
   <div class= "container">
     <div class="row">
-      <div class="col-md-3 col-md-offset-3">
-        <div class = "body-image">
-          <%= image_tag 'writingpad.jpg' %>
-          <span style = "text-align:center; color:brown; font-size:30px; font-family:calibri;"> WELCOME TO ALPHA BLOG </span>
-        </div>
+      <div class = "text-center jumbotron">
+        <h1>AlphaBlog</h1>
+        <%= link_to "Sign Up Now!", '' , class: "btn btn-success" %>
       </div>
     </div>
   </div>
 </section>
-</body>
+
+
+<script>
+  $(function(){
+  $('.about').removeClass('active');
+  $('.home').removeClass('active');
+  $('.articles').removeClass('active');
+  $('.home').addClass('active');
+  });
+</script>
