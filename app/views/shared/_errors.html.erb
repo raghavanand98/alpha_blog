@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <% if obj.errors.any? %>
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h3 class="panel-title">The Following <%= pluralize(obj.errors.count, "Error") %> Prevented Creation</h3>
+          </div>
+          <div class="panel-body panel-error">
+              <% obj.errors.full_messages.each do |msg| %>
+                <%= msg %><br>
+              <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
