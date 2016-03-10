@@ -6,7 +6,13 @@
       <%= gravatar_for @user, size: 150 %>
       </div><br>
       <h4 class="text-center"><%= @user.username %>'s Articles</h4>
-      <%= render 'articles/article', obj: @user.articles %>
+      <div class = "paginate">
+        <%= will_paginate @user_articles %>
+      </div>
+      <%= render 'articles/article', obj: @user_articles %>
+      <div class = "paginate">
+        <%= will_paginate @user_articles %>
+      </div>
     </div>
   </div>
 </section>
