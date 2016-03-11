@@ -1,20 +1,16 @@
 <section>
   <div class= "container">
     <div class="row">
+    </div>
+    
+    <div class="row">
       <div class = "text-center jumbotron">
         <h1>AlphaBlog</h1>
-        <%= link_to "Sign Up Now!", '' , class: "btn btn-success" %>
+        <%= link_to "Sign Up Now!", signup_path , class: "btn btn-success" %>
       </div>
     </div>
   </div>
 </section>
 
 
-<script>
-  $(function(){
-  $('.about').removeClass('active');
-  $('.home').removeClass('active');
-  $('.articles').removeClass('active');
-  $('.home').addClass('active');
-  });
-</script>
+
