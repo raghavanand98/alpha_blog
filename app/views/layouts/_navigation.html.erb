@@ -41,7 +41,11 @@
       <% if logged_in? %>
         <%= link_to 'Logout', logout_path, method: :delete, class: "btn btn-warning" %>
         <%= link_to 'Edit Profile ', edit_user_path(current_user), class: "btn btn-warning" %>
-        <%= link_to 'View Profile ', user_path(current_user), class: "btn btn-warning" %>
+        <% if current_user.admin? %>
+          <%= link_to "View Profile (Admin)", user_path(current_user), class: "btn btn-warning" %>
+        <% else %>
+          <%= link_to 'View Profile', user_path(current_user), class: "btn btn-warning" %>
+        <% end %>
 
       <% else %>
         <%= link_to 'Login', login_path, class: "btn btn-warning" %>
