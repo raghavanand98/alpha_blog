@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -15,6 +14,21 @@
             <li><%= link_to 'Home', root_path %></li>
             <li><%= link_to 'About', about_path %></li>
             <li><%= link_to 'Users', users_path %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
+              
+              <ul class="dropdown-menu">
+                <li><%= link_to 'View Categories', categories_path %></li>
+                <% Category.all.each do |category| %>
+                  <li><%= link_to category.name , category_path(category) %></li>
+                <% end %>
+                <% if logged_in? && current_user.admin? %>
+                  <li><%= link_to 'Create New Category', new_category_path %></li>
+                <% end %>
+              </ul>
+            </li>
+          
+
           <% if logged_in? %>
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Articles <span class="caret"></span></a>
