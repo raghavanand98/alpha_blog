@@ -5,6 +5,9 @@
       <h1 class="text-center">View All Articles in <%= @category.name %></h1>
       <p><br>
       <%= link_to 'Create New Article', new_article_path, class:"btn btn-md btn-info" %>
+      <% if logged_in? && current_user.admin? %>
+        <%= link_to "Edit name", edit_category_path(category), style: "float:right" %><br>
+      <% end %>
       </p><br>
       <div class="paginate">
         <%= will_paginate @category_articles %>

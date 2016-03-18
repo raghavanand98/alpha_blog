@@ -7,7 +7,11 @@
         <% @categories.each do |category| %>
           <div class = "well text-center">
           <li><%= link_to "#{category.name}", category_path(category) %><br>
-            <small><%= pluralize(category.articles.count, "article") %></small>
+            <small>
+              <% if logged_in? && current_user.admin? %>
+                <%= link_to "Edit name", edit_category_path(category), style: "float:right" %><br>
+              <% end %>
+              <%= pluralize(category.articles.count, "article") %></small>
           </li>
           </div>
         <% end %>
