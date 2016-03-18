@@ -22,6 +22,9 @@
           </div>
           <div class="panel-body">
            <%= simple_format(@article.description) %><br><br>
+           <% if @article.categories.any? %>
+             <p>Categories: <%= render @article.categories %></p>
+           <% end %>
           </div>
           <div class = "panel-footer">
             

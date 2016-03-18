@@ -5,6 +5,9 @@
     </div>
     <div class="panel-body">
      <%= truncate(article.description, length:50) %><br>
+     <% if article.categories.any? %>
+             <p>Categories: <%= render article.categories %></p>
+      <% end %>
       <div class = "article-metadata">
       <small>Created by: <%=(link_to article.user.username, user_path(article.user.id)) if article.user %>,
               <%= time_ago_in_words(article.created_at) %> ago,
